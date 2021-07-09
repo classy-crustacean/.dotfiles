@@ -8,4 +8,4 @@ if test (uname) = "Linux"
 else if test (uname) = "Darwin"
 	alias copy="xsel -ib"
 end
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
