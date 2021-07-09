@@ -5,6 +5,7 @@ Plug 'vim-scripts/javacomplete'
 Plug 'pprovost/vim-ps1'
 Plug 'othree/xml.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'dag/vim-fish'
 call plug#end()
 set number
 autocmd StdinReadPre * let s:std_in=1
