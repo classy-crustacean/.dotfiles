@@ -32,6 +32,10 @@ else
 		echo "[Dotfiles] Detected distro Fedora"
 		echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and util-linux-user for chsh"
 		sudo dnf install zsh vim wget curl xsel util-linux-user
+	elif "$DISTRO" | grep -iq "arch"
+		echo "[Dotfiles] Detected distro arch"
+		echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and starship"
+		sudo pacman -S fish vim wget curl xsel starship
 	fi
 fi
 
@@ -53,6 +57,7 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 echo "[Dotfiles] Cloning .dotfiles repository"
 git clone --bare "https://github.com/classy-crustacean/.dotfiles.git" $HOME/.dotfiles
 
+dotfiles reset --hard
 dotfiles checkout
 
 #stop showing all files
