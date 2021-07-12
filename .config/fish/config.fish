@@ -6,6 +6,6 @@ set EDITOR /usr/bin/vim
 if test (uname) = "Linux"
 	alias copy="xsel -ib"
 else if test (uname) = "Darwin"
-	alias copy="xsel -ib"
+	alias copy="pbcopy"
 end
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
