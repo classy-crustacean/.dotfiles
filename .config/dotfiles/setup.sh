@@ -33,6 +33,7 @@ else
 		echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and util-linux-user for chsh"
 		sudo dnf install zsh vim wget curl xsel util-linux-user
 	elif "$DISTRO" | grep -iq "arch"
+	then
 		echo "[Dotfiles] Detected distro arch"
 		echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and starship"
 		sudo pacman -S fish vim wget curl xsel starship
