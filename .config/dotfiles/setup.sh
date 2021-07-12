@@ -25,7 +25,7 @@ then
 	/usr/local/bin/brew install fish starship wget
 else
 	echo "[Dotfiles] Detected Linux operating system"
-	DISTRO="$(cat /etc/os-release | grep ^ID)"
+	DISTRO="$(cat /etc/os-release | grep "^ID")"
 	#fedora
 	if echo "$DISTRO" | grep -iq "fedora"
 	then
