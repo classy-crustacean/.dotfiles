@@ -16,7 +16,7 @@ fi
 
 
 #OS-Specific setup, have to differentiate between mac and linux distros
-if [ "$(uname)" == "Darwin" ]
+if uname | grep Darwin
 then
 	echo "[Dotfiles] Detected Mac operating system"
 	echo "[Dotfiles] Installing Homebrew"
