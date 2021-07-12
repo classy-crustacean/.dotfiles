@@ -25,18 +25,17 @@ then
 	/usr/local/bin/brew install fish starship wget
 else
 	echo "[Dotfiles] Detected Linux operating system"
-	DISTRO="$(cat /etc/os-release | grep "^ID")"
 	#fedora
-	if echo "$DISTRO" | grep -iq "fedora"
+	if cat /etc/os-release | grep -iq "fedora"
 	then
 		echo "[Dotfiles] Detected distro Fedora"
 		echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and util-linux-user for chsh"
 		sudo dnf install zsh vim wget curl xsel util-linux-user
-	elif echo "$DISTRO" | grep -iq "arch"
+	elif cat /etc/os-release | grep -iq "arch"
 	then
 		echo "[Dotfiles] Detected distro arch"
 		echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and starship"
-		sudo pacman -S fish vim wget curl xsel starship
+		sudo pacman -Sy fish vim wget curl xsel starship
 	fi
 fi
 
@@ -44,7 +43,7 @@ fi
 chsh -s "$(which fish)"
 
 echo "[Dotfiles] Installing vim-plug"
-curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubuserc    ontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "[Dotfiles] Installing oh-my-fish"
 fish "$(curl -L https://get.oh-my.fish)"
