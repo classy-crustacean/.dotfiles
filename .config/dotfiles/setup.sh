@@ -46,7 +46,7 @@ echo "[Dotfiles] Installing vim-plug"
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "[Dotfiles] Installing oh-my-fish"
-fish "$(curl -L https://get.oh-my.fish)"
+fish -c "$(curl -L https://get.oh-my.fish)"
 
 echo "[Dotfiles] Installing bang-bang through oh-my-fish"
 fish -c "omf install bang-bang; quit"
