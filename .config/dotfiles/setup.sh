@@ -23,20 +23,41 @@ then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	echo "[Dotfiles] Installing fish, starship, and wget"
 	/usr/local/bin/brew install fish starship wget
-else
-	echo "[Dotfiles] Detected Linux operating system"
-	#fedora
-	if cat /etc/os-release | grep -iq "fedora"
-	then
-		echo "[Dotfiles] Detected distro Fedora"
-		echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and util-linux-user for chsh"
-		sudo dnf install zsh vim wget curl xsel util-linux-user
-	elif cat /etc/os-release | grep -iq "arch"
-	then
-		echo "[Dotfiles] Detected distro arch"
-		echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and starship"
-		sudo pacman -Sy fish vim wget curl xsel starship
-	fi
+
+# Fedora
+elif  cat /etc/os-release | grep -iq "fedora"
+then
+	echo "[Dotfiles] Detected distro Fedora"
+	echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and util-linux-user for chsh"
+	sudo dnf install zsh vim wget curl xsel util-linux-user
+	echo "[Dotfiles] Installing Starship"
+	sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
+# Arch
+elif cat /etc/os-release | grep -iq "arch"
+then
+	echo "[Dotfiles] Detected distro Arch"
+	echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and starship"
+	sudo pacman -Sy fish vim wget curl xsel starship
+
+# SUSE
+elif cat /etc/os-release | grep -iq "suse"
+then
+	echo "[Dotfiles] Detected distro SUSE"
+	echo "[Dotfiles] Installing fish, vim, wget, curl, and xsel"
+	sudo zypper install fish vim wget curl xsel
+	echo "[Dotfiles] Installing Starship"
+	sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+
+# Debian
+elif cat /etc/os-release | grep -iq "debian"
+then
+	echo "[Dotfiles] Detected distro Debian"
+	echo "[Dotfiles] Installing vim, wget, and curl"
+	sudo apt update
+	sudo apt install vim wget curl
+	echo "[Dotfiles] Installing Starship"
+	sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 fi
 
 #Change shell to fish

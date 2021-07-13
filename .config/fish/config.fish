@@ -1,5 +1,5 @@
 # ~/.config/fish/config.fish
-
+set -U fish_greeting
 starship init fish | source
 ssh-agent -s > /dev/null 2>&1
 set EDITOR /usr/bin/vim
