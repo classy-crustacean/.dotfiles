@@ -49,9 +49,9 @@ then
 elif cat /etc/os-release | grep -iq "debian"
 then
 	echo "[Dotfiles] Detected distro Debian"
-	echo "[Dotfiles] Installing vim, wget, and curl"
+	echo "[Dotfiles] Installing vim, wget, curl, fish, and xsel"
 	sudo apt update
-	sudo apt install vim wget curl
+	sudo apt install vim wget curl fish xel
 fi
 
 # Install Starship
