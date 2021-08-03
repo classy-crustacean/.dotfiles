@@ -28,7 +28,9 @@ set noswapfile
 set backupdir-=.
 set backupdir^=~/tmp,/tmp
 autocmd filetype python set expandtab
-nnoremap <F5> :w<ENTER>:!clear<ENTER>:!%:p<ENTER>
+nnoremap <F5> :w<ENTER>:!clear; ./%<ENTER>
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 nnoremap <Leader>w <C-w><C-w>
 let g:NERDTreeGitStatusConcealBrackets = 1
+
+autocmd filetype c nnoremap <F5> :w<ENTER>:!clear; gcc -o %.test %; ./%.test<ENTER>
