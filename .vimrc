@@ -7,13 +7,12 @@ Plug 'pprovost/vim-ps1'
 Plug 'othree/xml.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'dag/vim-fish'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 syntax enable
 filetype plugin indent on
 set number
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-			\ execute 'NERDTree' argv()[0] | endif
 set shiftwidth=2
 ":set autoindent
 ":set smartindent
@@ -25,7 +24,11 @@ set showmatch
 set ignorecase
 set hlsearch
 set incsearch
-set nobackup
 set noswapfile
+set backupdir-=.
+set backupdir^=~/tmp,/tmp
 autocmd filetype python set expandtab
 nnoremap <F5> :w<ENTER>:!clear<ENTER>:!%:p<ENTER>
+nnoremap <Leader>f :NERDTreeToggle<Enter>
+nnoremap <Leader>w <C-w><C-w>
+let g:NERDTreeGitStatusConcealBrackets = 1

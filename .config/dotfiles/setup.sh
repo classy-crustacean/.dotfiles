@@ -50,7 +50,7 @@ elif cat /etc/os-release | grep -iq "debian"
 then
 	echo "[Dotfiles] Detected distro Debian"
 	echo "[Dotfiles] Installing vim, wget, curl, fish, and xsel"
-	sudo apt update
+	sudo apt-get update -qy
 	sudo apt-get install vim wget curl fish xsel -qy
 fi
 
