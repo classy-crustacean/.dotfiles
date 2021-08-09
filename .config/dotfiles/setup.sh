@@ -74,7 +74,7 @@ make dotfiles alias to manage local repo
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 echo "[Dotfiles] Cloning .dotfiles repository"
-git clone --bare "git@github.com:classy-crustacean/.dotfiles.git" $HOME/.dotfiles
+git clone --bare "https://github.com/classy-crustacean/.dotfiles.git" $HOME/.dotfiles
 
 dotfiles reset --hard
 dotfiles checkout
