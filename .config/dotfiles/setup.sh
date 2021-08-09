@@ -28,30 +28,30 @@ then
 elif  cat /etc/os-release | grep -iq "fedora"
 then
 	echo "[Dotfiles] Detected distro Fedora"
-	echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and util-linux-user for chsh"
-	sudo dnf install zsh vim wget curl xsel util-linux-user
+	echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, git, and util-linux-user for chsh"
+	sudo dnf install fish vim wget curl xsel git util-linux-user
 
 # Arch
 elif cat /etc/os-release | grep -iq "arch"
 then
 	echo "[Dotfiles] Detected distro Arch"
-	echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and starship"
-	sudo pacman -Sy fish vim wget curl xsel 
+	echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and git"
+	sudo pacman -Sy fish vim wget curl xsel git 
 
 # SUSE
 elif cat /etc/os-release | grep -iq "suse"
 then
 	echo "[Dotfiles] Detected distro SUSE"
-	echo "[Dotfiles] Installing fish, vim, wget, curl, and xsel"
-	sudo zypper install fish vim wget curl xsel
+	echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and git"
+	sudo zypper install fish vim wget curl xsel git
 
 # Debian
 elif cat /etc/os-release | grep -iq "debian"
 then
 	echo "[Dotfiles] Detected distro Debian"
-	echo "[Dotfiles] Installing vim, wget, curl, fish, and xsel"
+	echo "[Dotfiles] Installing vim, wget, curl, fish, xsel and git"
 	sudo apt-get update -qy
-	sudo apt-get install vim wget curl fish xsel -qy
+	sudo apt-get install vim wget curl fish xsel git -qy
 fi
 
 # Install Starship
