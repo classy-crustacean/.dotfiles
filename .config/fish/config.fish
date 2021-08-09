@@ -9,4 +9,5 @@ else if test (uname) = "Darwin"
 	alias copy="pbcopy"
 end
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias la='ls -@Ah'
+alias la='ls -Ah'
+alias ll='la -l'
