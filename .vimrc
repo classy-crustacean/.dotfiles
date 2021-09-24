@@ -13,7 +13,6 @@ syntax enable
 filetype plugin indent on
 set number
 autocmd StdinReadPre * let s:std_in=1
-set shiftwidth=2
 ":set autoindent
 ":set smartindent
 set tabstop=4
@@ -33,6 +32,6 @@ nnoremap <Leader>w <C-w><C-w>
 let g:NERDTreeGitStatusConcealBrackets = 1
 
 " filetypes
-autocmd filetype c nnoremap <F5> :w<ENTER>:!clear;gcc -o %.test %;./%.test<ENTER>
+autocmd filetype c set tabstop=2 | set shiftwidth=2 | nnoremap <F5> :w<ENTER>:!clear;gcc %;./a.out<ENTER>
 autocmd filetype python set expandtab | nnoremap <F5> :w<ENTER>:!clear;python3 %<ENTER>
 autocmd filetype sh nnoremap <F5> :w<ENTER>:!clear;sh %<ENTER>
