@@ -9,9 +9,10 @@ Plug 'rust-lang/rust.vim'
 Plug 'dag/vim-fish'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
-syntax enable
+syntax on 
 filetype plugin indent on
 set number
+set relativenumber
 autocmd StdinReadPre * let s:std_in=1
 ":set autoindent
 ":set smartindent
@@ -26,12 +27,13 @@ set incsearch
 set noswapfile
 set backupdir-=.
 set backupdir^=~/tmp,/tmp
+set belloff=all
 nnoremap <F5> :w<ENTER>:!clear; ./%<ENTER>
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 nnoremap <Leader>w <C-w><C-w>
 let g:NERDTreeGitStatusConcealBrackets = 1
 
 " filetypes
-autocmd filetype c set tabstop=2 | set shiftwidth=2 | nnoremap <F5> :w<ENTER>:!clear;gcc %;./a.out<ENTER>
+autocmd filetype c set tabstop=2 | set shiftwidth=2 | nnoremap <F5> :w<ENTER>:!clear;gcc -lm %;./a.out<ENTER>
 autocmd filetype python set expandtab | nnoremap <F5> :w<ENTER>:!clear;python3 %<ENTER>
 autocmd filetype sh nnoremap <F5> :w<ENTER>:!clear;sh %<ENTER>
