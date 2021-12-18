@@ -29,7 +29,7 @@ elif  cat /etc/os-release | grep -iq "fedora"
 then
 	echo "[Dotfiles] Detected distro Fedora"
 	echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, git, and util-linux-user for chsh"
-	sudo dnf install fish vim wget curl xsel git util-linux-user
+	sudo dnf install fish vim wget curl xsel git util-linux-user -y
 
 # Arch
 elif cat /etc/os-release | grep -iq "arch"
