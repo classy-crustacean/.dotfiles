@@ -61,9 +61,6 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 #Change shell to fish
 chsh -s "$(which fish)"
 
-echo "[Dotfiles] Installing vim-plug"
-curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 echo "[Dotfiles] Installing oh-my-fish"
 fish -c "$(curl -L https://get.oh-my.fish); exit"
 
@@ -82,5 +79,3 @@ dotfiles checkout
 #stop showing all files
 dotfiles config --local status.showUntrackedFiles no
 
-echo "[Dotfiles] Installing Vim Plugins"
-vim -c "PlugInstall | qa!"

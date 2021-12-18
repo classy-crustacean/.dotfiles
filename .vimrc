@@ -39,6 +39,6 @@ nnoremap <Leader>w <C-w><C-w>
 let g:NERDTreeGitStatusConcealBrackets = 1
 
 " filetypes
-autocmd filetype c set tabstop=2 | set shiftwidth=2 | nnoremap <F5> :w<ENTER>:!clear;gcc -lm %;./a.out<ENTER>
+autocmd filetype c set tabstop=2 | set shiftwidth=2 | set expandtab | nnoremap <F5> :w<ENTER>:!clear;gcc -lm %;./a.out<ENTER>
 autocmd filetype python set expandtab | nnoremap <F5> :w<ENTER>:!clear;python3 %<ENTER>
 autocmd filetype sh nnoremap <F5> :w<ENTER>:!clear;sh %<ENTER>
