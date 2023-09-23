@@ -35,8 +35,8 @@ then
 elif cat /etc/os-release | grep -iq "arch"
 then
 	echo "[Dotfiles] Detected distro Arch"
-	echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, and git"
-	sudo pacman -Sy fish vim wget curl xsel git 
+	echo "[Dotfiles] Installing fish, vim, wget, curl, xsel, git, and chsh"
+	sudo pacman -Sy fish vim wget curl xsel git chsh
 
 # SUSE
 elif cat /etc/os-release | grep -iq "suse"
