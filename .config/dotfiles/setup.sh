@@ -67,7 +67,7 @@ fish -c "$(curl -L https://get.oh-my.fish); exit"
 echo "[Dotfiles] Installing bang-bang through oh-my-fish"
 fish -c "omf install bang-bang; exit"
 
-make dotfiles alias to manage local repo
+# make dotfiles alias to manage local repo
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 echo "[Dotfiles] Cloning .dotfiles repository"
@@ -78,4 +78,8 @@ dotfiles checkout
 
 #stop showing all files
 dotfiles config --local status.showUntrackedFiles no
+
+# make fetch url http, but push url ssh
+dotfiles remote set-url origin "https://github.com/classy-crustacean/.dotfiles.git"
+dotfiles remote set-url --push origin "git@github.com:classy-crustacean/.dotfiles.git"
 
